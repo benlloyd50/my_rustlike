@@ -1,0 +1,29 @@
+name: PushGameToWebsite
+
+#~~~~~~WHEN~~~~~~~~~
+on:
+  push:
+    paths:
+      - 'recent_web_build\my_rustlike_bg.wasm'
+      - 'recent_web_build\my_rustlike.js'
+    
+  workflow_dispatch:
+
+#~~~~WHAT TO DO~~~~~~
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+      - uses: actions/checkout@v3
+      
+      - name: Push a file to another repository
+        uses: dmnemec/copy_file_to_another_repo_action@v1.1.1
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_GITHUB_TOKEN }}
+        with:
+          source_file: 'recent_web_build'
+          destination_repo: 'benlloyd50/Portfolio'
+          user_email: 'benji6090@gmail.com'
+          user_name: 'benlloyd50'
+          commit_message: 'Updated game from ${GITHUB_REPOSITORY}'
