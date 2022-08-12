@@ -23,7 +23,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_GITHUB_TOKEN }}
         with:
           source-directory: recent_web_build/
-          destination-repo-name: 'Portfolio'
+          destination-repository-name: 'Portfolio'
           user-email: benji6090@gmail.com
-          destination-repository-name: 'benlloyd50'
-          commit_message: New build for roguelike pushed
+          destination-github-username: 'benlloyd50'
+          commit-message: New build for roguelike pushed
