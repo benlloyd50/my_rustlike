@@ -17,13 +17,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       
-      - name: Push a file to another repository
-        uses: cpina/github-action-push-to-another-repository@main
+      - name: Push game files to another repo
+        uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: recent_web_build/
-          destination-repository-name: 'Portfolio'
-          user-email: benji6090@gmail.com
-          destination-github-username: 'benlloyd50'
-          commit-message: New build for roguelike pushed
+          source_file: 'recent_web_build'
+          destination_repo: 'benlloyd50/Portfolio'
+          user_email: 'benji6090@gmail.com'
+          user_name: 'benlloyd50'
+          commit_message: 'Updated game from master repo'
