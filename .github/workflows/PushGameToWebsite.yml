@@ -4,8 +4,8 @@ name: PushGameToWebsite
 on:
   push:
     paths:
-      - 'recent_web_build\my_rustlike_bg.wasm'
-      - 'recent_web_build\my_rustlike.js'
+      - 'recent_web_build/my_rustlike_bg.wasm'
+      - 'recent_web_build/my_rustlike.js'
     
   workflow_dispatch:
 
