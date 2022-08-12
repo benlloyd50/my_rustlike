@@ -22,7 +22,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_GITHUB_TOKEN }}
         with:
-          source_file: 'recent_web_build'
+          source_file: 'recent_web_build/'
           destination_repo: 'benlloyd50/Portfolio'
           user_email: 'benji6090@gmail.com'
           user_name: 'benlloyd50'
